@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,30 +28,29 @@
 
     <div class="card">
       <div class="lineInput">
-        <label>Preço</label>
-        <input type="text" id="Preço"placeholder="Nome do Produto">
+        <label>Produto</label>
+        <input type="text" id="produto"placeholder="Nome do Produto">
       </div>
 
       <div class="lineInput">
-        <label>Valor</label>
-        <input type="text" id="Valor"placeholder="Valor do Produto">
+        <label>Preço</label>
+        <input type="text" id="preco"placeholder=" Valor do Produto">
       </div>
 
-      <button onclick="produto.Salvar()">Salvar</button>
+      <button onclick="produto.salvar()">Salvar</button>
       <button onclick="produto.cancelar()">Cancelar</button>
     </div>
 
     <div class="conteudo">
-      <table border="1">
+      <table border ="1">
         <thead>
-          <th class="center">Id</th>
+          <th class="center">ID</th>
           <th>Produto</th>
-          <th>Valor</th>
+          <th>Preço</th>
           <th class="center">Ação</th>
         </thead>
         <tbody id="tbody">
-         
-          
+
         </tbody>
       </table>
 

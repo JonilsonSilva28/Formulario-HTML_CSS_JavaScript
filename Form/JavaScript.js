@@ -1,27 +1,61 @@
-class Produto{
+class Produto {
 
   constructor() {
       this.id = 1;
       this.arrayProdutos = [];
-  
   }
 
-  Salvar() {
+  salvar() {
       let produto = this.lerDados();
 
-      if(this.validaCampos(produto)){
-        alert('Salvar')
+      if(this.validaCampos(produto)) {
+          this.adicionar(produto);
       }
 
-      console.log(produto);
+      this.listaTabela();
+      this.cancelar();
   }
 
-  lerDados( ){
+  listaTabela(){
+      let tbody = document.getElementById('tbody');
+      tbody.innerText = '';
+
+      for(let i = 0; i < this.arrayProdutos.length; i++) {
+          let tr = tbody.insertRow();
+
+          let td_id = tr.insertCell();
+          let td_produto = tr.insertCell();
+          let td_valor = tr.insertCell();
+          let td_acao = tr.insertCell();
+
+          td_id.innerText = this.arrayProduto[i].id;
+          td_produto.innerText = this.arrayProduto[i].nomeProduto;
+          td_valor.innerText = this.arrayProduto[i].preco;
+
+          td_id.classList.add('center');
+
+          let imgEdit = document.createElement('img');
+          imgEdit.src = 'img/document-editor.png';
+
+          let imgDelete = document.createElement('img');
+          imgDelete.src = 'img/delete.png';
+          
+          td_acao.appendChild(imgEdit);
+          td_acao.appendChild(imgDelete);
+      }
+  }
+
+  adicionar(produto) {
+      this.arrayProdutos.push(produto);
+      this.id++;
+  }
+
+  lerDados(){
       let produto = {}
 
       produto.id = this.id;
       produto.nomeProduto = document.getElementById('produto').value;
-      produto.preco = document.getElementById('preco').value;
+      produto.valor = document.getElementById('valor').value;
 
       return produto;
   }
@@ -29,24 +63,25 @@ class Produto{
   validaCampos(produto){
       let msg ='';
 
-      if(produto.nomeProduto ==''){
-          msg += '- Inoforme o nome do produto \n';
+      if(produto.nomeProduto =='') {
+          msg += '- Informe o Nome do Produto \n';
       }
 
-      if(produto.nomeProduto ==''){
-        msg += '- Inoforme o Preço do produto \n';
+      if(produto.valor =='') {
+          msg += '- Informe o Preço do Produto \n';
       }
 
-      if(msg != ''){
-        alert(msg);
-        return false
+      if(msg != '') {
+          alert(msg);
+          return false
       }
 
       return true;
   }
 
   cancelar(){
-
+    document.getElementById('produto').value = '';
+    document.getElementById('valor').value = '';
   }
 }
 
