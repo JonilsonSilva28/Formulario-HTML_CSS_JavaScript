@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="Style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
@@ -21,40 +20,39 @@
   </header>
 
   <main>
-    <div class="title">
-      <h2>Adesivos</h2>
-      <span>Quais adesivos:</span>
-    </div>
-
-    <div class="card">
-      <div class="lineInput">
-        <label>Produto</label>
-        <input type="text" id="produto"placeholder="Nome do Produto">
+      <div class="title">
+          <h2>Adesivos</h2>
+          <span>Quais adesivos:</span>
       </div>
 
-      <div class="lineInput">
-        <label>Preço</label>
-        <input type="text" id="preco"placeholder=" Valor do Produto">
+      <div class="card">
+          <div class="lineInput">
+              <label>Produto</label>
+              <input type="text" id="produto"placeholder="Nome do Produto">
+          </div>
+
+          <div class="lineInput">
+              <label>Preço</label>
+              <input type="number" id="preco"placeholder=" Valor do Produto">
+            </div>
+
+          <button onclick="produto.salvar()" id="btn1">Salvar</button>
+          <button onclick="produto.cancelar()">Cancelar</button>
       </div>
 
-      <button onclick="produto.salvar()">Salvar</button>
-      <button onclick="produto.cancelar()">Cancelar</button>
-    </div>
+      <div class="content">
+          <table border="1">
+              <thead>
+                  <th class="center">ID</th>
+                  <th>Produto</th>
+                  <th>Valor</th>
+                  <th class="center">Ações</th>
+              </thead>
+              <tbody id="tbody">
 
-    <div class="conteudo">
-      <table border ="1">
-        <thead>
-          <th class="center">ID</th>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th class="center">Ação</th>
-        </thead>
-        <tbody id="tbody">
-
-        </tbody>
-      </table>
-
-    </div>
+              </tbody>
+          </table>
+      </div>
   </main>
 
 </body>
