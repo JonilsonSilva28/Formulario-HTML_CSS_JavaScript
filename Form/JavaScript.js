@@ -41,7 +41,7 @@ class Produto {
 
             let imgEdit = document.createElement('img');
             imgEdit.src = 'img/document-editor.png';
-            imgEdit.setAttribute("onclick", "produto.preparaEditacao("+ JSON.stringify(this.arrayProdutos[i]) +")");
+            imgEdit.setAttribute("onclick", "produto.preparaEdicao("+ JSON.stringify(this.arrayProdutos[i]) +")");
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.png';
@@ -69,7 +69,7 @@ class Produto {
         }
     }
 
-    preparaEditacao(dados) {
+    preparaEdicao(dados) {
         this.editId = dados.id;
 
         document.getElementById('produto').value = dados.nomeProduto;
